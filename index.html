@@ -28,7 +28,7 @@
         
     </div>
     
-    <textarea spellcheck="false"></textarea>
+    <textarea spellcheck="false" autofocus></textarea>
   
     <script>
         const switchIcon=document.querySelector('#switchIcon');
@@ -53,6 +53,7 @@
             } else {
                 setTheme('theme-light');
             }
+            document.querySelector('textarea').focus();
         }
         // Immediately invoked function to set the theme on initial load
         (function () {
@@ -71,10 +72,11 @@
             a.click();
             URL.revokeObjectURL(a.href);
         };
-
+        
         document.querySelector('#btnsave').addEventListener('click', () => {
             const textArea = document.querySelector('textarea');
             downloadToFile(textArea.value, 'useless-notes.txt', 'text/plain');
+            document.querySelector('textarea').focus();
         });
     </script>
 </body>
