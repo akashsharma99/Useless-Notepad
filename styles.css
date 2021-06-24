@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+.theme-light {
+    --color-primary: #ebebeb;
+    --color-secondary: #e2e2e2;
+    --font-color: #242222;
+    --nav-icon:url('assets/light-icon.svg');
+    --theme-icon:url('assets/moon.svg');
+    --b-shadow:2px 2px 2px 2px #726f6f11;
+  }
+.theme-dark {
+    --color-primary: #3a3333;
+    --color-secondary: #2b2525;
+    --font-color: #dbd2d2;
+    --nav-icon:url('assets/dark-icon.svg');
+    --theme-icon:url('assets/sun.svg');
+    --b-shadow:2px 2px 2px 2px #00000011;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.box{
+   
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+   height: 100%;
+   width: 100%;
+   -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box; 
+    
+    background:var(--color-secondary);
+    color:var(--font-color);
+    margin: 0;
+    border: none;
+    font-family: 'Raleway',sans-serif;
+    outline: none;
+    resize: none;
+    padding: 20px;
+    
+}
+.nav-wrapper{
+    position:sticky;
+    top: 0px;
+    box-shadow: var(--b-shadow);
+}
+.navbar{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    align-items: center;
+    font-family: 'Bree Serif',serif;
+    padding: 0;
+    height: 60px;
+}
+#appIcon{
+    height: 40px;
+    margin-left: 15px;
+}
+.navbar li{
+    display: flex;
+    margin: 0px;
+    padding: 0px 20px;
+    height: 100%;
+    align-items: center;
+    color:var(--font-color);
+}
+#switchIcon{
+    height: 30px;
+    margin-left: 15px;
+}
+.nav-option{
+    text-decoration: none;
+    cursor: pointer;
+    justify-content: center;
+}
+.nav-option:hover{
+    background-color: var(--color-secondary);
+    
+}
+#appname{
+    flex:1;  
+}
+@media screen and (orientation:portrait) {
+    #switch span{
+        display: none;
+    }
+    #appname h1{
+        display: none;
+    }
+    #appIcon{
+        margin-left: 0;
+    }
+    #switchIcon{
+        margin-left: 0;
+    }
+}

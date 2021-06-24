@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/favicon.svg" sizes="16x16 32x32" type="image/svg+xml">
+    <title>Useless Notepad</title>
+</head>
+<body class="box">
+    
+    <div class="nav-wrapper">
+        <ul class="navbar">
+            <li id="appname">
+                <h1>Useless Notepad</h1>
+                <img id="appIcon" src="assets/dark-icon.svg">
+            </li>
+            <li class="nav-option" id="switch" onclick="toggleTheme()">
+                <span>Theme</span>
+                <img id="switchIcon">
+            </li>
+            <li class="nav-option" id="btnsave">
+                <span>Save</span>
+                
+            </li>
+        </ul>
+        
+    </div>
+    
+    <textarea spellcheck="false"></textarea>
+  
+    <script>
+        const switchIcon=document.querySelector('#switchIcon');
+        const appIcon=document.querySelector('#appIcon');
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+            if (themeName === 'theme-light') {
+                switchIcon.src="assets/moon.svg";
+                appIcon.src="assets/light-icon.svg";
+            } else {
+                switchIcon.src="assets/sun.svg";
+                appIcon.src="assets/dark-icon.svg";
+            }
+        }
+
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-dark');
+            } else {
+                setTheme('theme-light');
+            }
+        }
+        // Immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        })();
+        
+        const downloadToFile = (content, filename, contentType) => {
+            const a = document.createElement('a');
+            const file = new Blob([content], {type: contentType});
+            a.href= URL.createObjectURL(file);
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        };
+
+        document.querySelector('#btnsave').addEventListener('click', () => {
+            const textArea = document.querySelector('textarea');
+            downloadToFile(textArea.value, 'useless-notes.txt', 'text/plain');
+        });
+    </script>
+</body>
+</html>
