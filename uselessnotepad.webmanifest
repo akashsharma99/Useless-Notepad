@@ -21,9 +21,8 @@
             "purpose": "any"
         }
     ],
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "display": "standalone",
-    "scope": "/Useless-Notepad/",
     "theme_color": "#2b2525",
     "background_color": "#3a3333"
 }
