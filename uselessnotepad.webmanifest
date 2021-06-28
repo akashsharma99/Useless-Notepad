@@ -22,6 +22,7 @@
         }
     ],
     "start_url": "https://akashsharma99.github.io/Useless-Notepad/",
+    "scope":"https://akashsharma99.github.io/Useless-Notepad/",
     "display": "standalone",
     "theme_color": "#2b2525",
     "background_color": "#3a3333"
