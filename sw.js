@@ -1,9 +1,8 @@
-const CACHE_VERSION = 'v11';
+const CACHE_VERSION = 'v12';
 const cacheItems = [
     '/Useless-Notepad/styles.css',
     '/Useless-Notepad/index.html',
     '/Useless-Notepad/app.js',
-    '/Useless-Notepad/uselessnotepad.webmanifest',
     '/Useless-Notepad/assets/app-icon-192.png',
     '/Useless-Notepad/assets/app-icon-512.png',
     '/Useless-Notepad/assets/favicon.svg',
