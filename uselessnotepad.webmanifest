@@ -23,7 +23,7 @@
     ],
     "start_url": "index.html",
     "display": "standalone",
-    "scope": "/",
+    "scope": "/Useless-Notepad/",
     "theme_color": "#2b2525",
     "background_color": "#3a3333"
 }
