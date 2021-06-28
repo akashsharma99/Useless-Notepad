@@ -1,0 +1,29 @@
+{
+    "short_name": "UselessNotepad",
+    "name": "Useless Notepad",
+    "icons": [
+        {
+            "src": "/assets/app-icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/app-icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/favicon.svg",
+            "type": "image/svg+xml",
+            "sizes": "48x48 57x57 60x60 72x72 76x76 96x96 114x114 120x120 144x144 152x152 180x180 256x256 384x384",
+            "purpose": "any"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#2b2525",
+    "background_color": "#3a3333"
+}

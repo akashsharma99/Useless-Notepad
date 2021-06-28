@@ -3,3 +3,5 @@
 # Useless Notepad 
 A simple text editor with no features. Just keep typing. When you get tired, click on the save button to download your text as a file.
 
+Also works offline and can be installed as a PWA.
+

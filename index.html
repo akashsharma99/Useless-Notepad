@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2b2525">
     <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="shortcut icon" href="assets/favicon.svg" sizes="16x16 32x32" type="image/svg+xml">
+    <link rel="manifest" href="/uselessnotepad.webmanifest">
     <title>Useless Notepad</title>
 </head>
+
 <body class="box">
-    
+
     <div class="nav-wrapper">
         <ul class="navbar">
             <li id="appname">
@@ -22,62 +27,15 @@
             </li>
             <li class="nav-option" id="btnsave">
                 <span>Save</span>
-                
+
             </li>
         </ul>
-        
-    </div>
-    
-    <textarea spellcheck="false" autofocus></textarea>
-  
-    <script>
-        const switchIcon=document.querySelector('#switchIcon');
-        const appIcon=document.querySelector('#appIcon');
-        // function to set a given theme/color-scheme
-        function setTheme(themeName) {
-            localStorage.setItem('theme', themeName);
-            document.documentElement.className = themeName;
-            if (themeName === 'theme-light') {
-                switchIcon.src="assets/moon.svg";
-                appIcon.src="assets/light-icon.svg";
-            } else {
-                switchIcon.src="assets/sun.svg";
-                appIcon.src="assets/dark-icon.svg";
-            }
-        }
 
-        // function to toggle between light and dark theme
-        function toggleTheme() {
-            if (localStorage.getItem('theme') === 'theme-light') {
-                setTheme('theme-dark');
-            } else {
-                setTheme('theme-light');
-            }
-            document.querySelector('textarea').focus();
-        }
-        // Immediately invoked function to set the theme on initial load
-        (function () {
-            if (localStorage.getItem('theme') === 'theme-light') {
-                setTheme('theme-light');
-            } else {
-                setTheme('theme-dark');
-            }
-        })();
-        
-        const downloadToFile = (content, filename, contentType) => {
-            const a = document.createElement('a');
-            const file = new Blob([content], {type: contentType});
-            a.href= URL.createObjectURL(file);
-            a.download = filename;
-            a.click();
-            URL.revokeObjectURL(a.href);
-        };
-        
-        document.querySelector('#btnsave').addEventListener('click', () => {
-            const textArea = document.querySelector('textarea');
-            downloadToFile(textArea.value, 'useless-notes.txt', 'text/plain');
-            document.querySelector('textarea').focus();
-        });
-    </script>
+    </div>
+
+    <textarea spellcheck="false" autofocus></textarea>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
