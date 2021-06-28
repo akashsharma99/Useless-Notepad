@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v10';
+const CACHE_VERSION = 'v11';
 const cacheItems = [
     '/Useless-Notepad/styles.css',
     '/Useless-Notepad/index.html',
